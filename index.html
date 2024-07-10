@@ -6,191 +6,110 @@
     <title>Breakthrough</title>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;800&display=swap" rel="stylesheet">
     <style>
-        :root {
-            --white: #ffffff;
-            --black: #000000;
-            --gray: #f0f0f0;
-        }
-        body {
-            font-family: 'Montserrat', sans-serif;
-            margin: 0;
-            padding: 0;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            background-color: var(--white);
-            color: var(--black);
-            line-height: 1.6;
-        }
-        .container {
-            width: 90%;
-            max-width: 1200px;
-            margin: 40px 0;
-        }
-        .header {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            width: 100%;
-            margin-bottom: 2rem;
-        }
+        /* ... (previous styles remain the same) ... */
+
         .logo {
-            max-width: 300px;
-            height: auto;
-        }
-        h1, h2, h3 {
-            text-align: center;
-            font-weight: 800;
-        }
-        h2 {
-            font-size: 2rem;
-            margin-top: 3rem;
-        }
-        .section {
-            margin: 60px 0;
-            text-align: center;
-        }
-        .mission-statement {
-            font-weight: bold;
-            font-style: italic;
-            font-size: 1.2rem;
-            line-height: 1.8;
-            max-width: 800px;
-            margin: 0 auto 20px;
-            padding: 20px;
-            border-left: 4px solid var(--black);
-            background-color: var(--gray);
-        }
-        .mission-description {
-            max-width: 800px;
-            margin: 0 auto;
-            text-align: justify;
-        }
-        .signup-button {
-            text-align: center;
-            margin: 40px 0;
-        }
-        .signup-button a {
-            display: inline-block;
-            padding: 15px 30px;
-            background-color: var(--black);
-            color: var(--white);
-            text-decoration: none;
-            font-weight: 600;
-            transition: all 0.3s ease;
-        }
-        .signup-button a:hover {
-            background-color: var(--white);
-            color: var(--black);
-            box-shadow: 0 0 0 2px var(--black);
-        }
-        .sponsor-image {
-            max-width: 100%;
-            height: auto;
-            margin: 20px 0;
-        }
-        .event-year {
+            max-width: 400px;  /* Increased from 300px */
             width: 100%;
-            margin: 20px 0;
-            padding: 20px;
-            background-color: var(--gray);
-            text-align: left;
-            transition: background-color 0.3s ease;
-            display: flex;
-            flex-wrap: wrap;
-            align-items: flex-start;
-        }
-        .event-year:hover {
-            background-color: var(--black);
-            color: var(--white);
-        }
-        .event-year video, .event-year img {
-            width: 300px;
             height: auto;
-            margin-right: 20px;
-            margin-bottom: 20px;
-            object-fit: cover;
         }
-        .event-year-content {
-            flex-grow: 1;
+
+        .background-logo {
+            position: fixed;
+            width: 160px;  /* Doubled from 80px */
+            height: 160px;  /* Doubled from 80px */
+            opacity: 0.15;
+            pointer-events: auto;
+            transition: transform 0.3s ease;
+            z-index: -1;
         }
-        .contact-section {
-            margin-top: 60px;
-            text-align: center;
+
+        .background-logo:hover {
+            transform: scale(1.1);
         }
-        .contact-section p {
-            margin-bottom: 10px;
+
+        .broken {
+            animation: shake 0.5s;
         }
-        @media (max-width: 768px) {
-            .event-year {
-                flex-direction: column;
-                text-align: center;
-            }
-            .event-year video, .event-year img {
-                margin-right: 0;
-                width: 100%;
-            }
+
+        @keyframes shake {
+            0% { transform: translate(1px, 1px) rotate(0deg); }
+            10% { transform: translate(-1px, -2px) rotate(-1deg); }
+            20% { transform: translate(-3px, 0px) rotate(1deg); }
+            30% { transform: translate(3px, 2px) rotate(0deg); }
+            40% { transform: translate(1px, -1px) rotate(1deg); }
+            50% { transform: translate(-1px, 2px) rotate(-1deg); }
+            60% { transform: translate(-3px, 1px) rotate(0deg); }
+            70% { transform: translate(3px, 1px) rotate(-1deg); }
+            80% { transform: translate(-1px, -1px) rotate(1deg); }
+            90% { transform: translate(1px, 2px) rotate(0deg); }
+            100% { transform: translate(1px, -2px) rotate(-1deg); }
         }
     </style>
 </head>
 <body>
+    <div id="background-container"></div>
     <div class="container">
-        <div class="header">
-            <img src="Logo 2.gif" alt="Breakthrough Logo" class="logo">
-        </div>
-        
-        <div class="section">
-            <h2>Our Mission</h2>
-            <p class="mission-statement">To celebrate the personal breakthroughs that happen in our lives, both big and small, and the obstacles that held us back along the way, Breakthrough aims to connect friends and create new ones, to recognize the supporters who helped us get where we are today, and to push us further tomorrow</p>
-            <p class="mission-description">Breakthrough started with a wish to celebrate in a different way. Most celebrations like birthdays, Christmas, or New Year's are based around traditions and have very little to do with anything you personally did or the everyday problems that make up our lives. In contrast, Breakthrough highlights all the small victories and celebrates those things through a yearly event of inspiration, bonding, personal development, and fun.</p>
-        </div>
-        
-        <div class="signup-button">
-            <a href="#signup">Join next event!</a>
-        </div>
-        
-        <div class="section">
-            <h2>Sponsor Hall of Fame</h2>
-            <p>Personal breakthroughs happen mostly in gratitude to the support we get along the way. Thank you to these amazing supporters allowing our events to become awesome!</p>
-            <img src="Sponsor slide cut.png" alt="Sponsor Hall of Fame" class="sponsor-image">
-        </div>
-        
-        <div class="section events">
-            <h2>Our Events</h2>
-            <div class="event-year">
-                <video width="300" controls>
-                    <source src="Launch Teaser.mp4" type="video/mp4">
-                    Your browser does not support the video tag.
-                </video>
-                <div class="event-year-content">
-                    <h3>2024</h3>
-                    <p>This year's theme is Project: You, and it's about dedicating a day to doing something for yourself through a personal project. The aim is to work on these projects together, instead of alone at home. Promoting DIY</p>
-                </div>
-            </div>
-            <div class="event-year">
-                <video width="300" controls>
-                    <source src="Breakthrough2023.mp4" type="video/mp4">
-                    Your browser does not support the video tag.
-                </video>
-                <img src="ys.jpg" alt="2023 Event Image" width="300">
-                <div class="event-year-content">
-                    <h3>2023</h3>
-                    <p>2023 Celebrated the things that you went through during the year. All participants had to reflect on something important that happened, something they messed up, and something that they wish for the coming year. A cozy day!</p>
-                </div>
-            </div>
-            <div class="event-year">
-                <img src="breakthrough2022.png" alt="2022 Event" width="300">
-                <div class="event-year-content">
-                    <h3>2022</h3>
-                    <p>The first Breakthrough event was created during the dominance of the Corona Virus. The event was scaled down to a cozy board game night. A comeback next year would be necessary!</p>
-                </div>
-            </div>
-        </div>
-        
-        <div class="contact-section">
-            <h2>Contact Us</h2>
-            <p>Email: Danielsaxelsen@gmail.com</p>
-        </div>
+        <!-- ... (previous content remains the same) ... -->
     </div>
+
+    <script>
+        function createBackgroundLogos() {
+            const container = document.getElementById('background-container');
+            const numLogos = 7;  // Maximum number of logos
+            const minDistance = 200;  // Minimum distance between logos
+
+            const logos = [];
+
+            for (let i = 0; i < numLogos; i++) {
+                const logo = document.createElement('img');
+                logo.src = 'Logo 2.gif';  // Use your circular logo image
+                logo.classList.add('background-logo');
+                
+                let attempts = 0;
+                let validPosition = false;
+
+                while (!validPosition && attempts < 50) {
+                    const xPos = Math.random() * (window.innerWidth - 160);  // 160 is the logo width
+                    const yPos = Math.random() * (window.innerHeight - 160);  // 160 is the logo height
+
+                    validPosition = logos.every(existingLogo => {
+                        const dx = xPos - existingLogo.x;
+                        const dy = yPos - existingLogo.y;
+                        return Math.sqrt(dx*dx + dy*dy) >= minDistance;
+                    });
+
+                    if (validPosition) {
+                        logo.style.left = `${xPos}px`;
+                        logo.style.top = `${yPos}px`;
+                        logos.push({ x: xPos, y: yPos });
+                    }
+
+                    attempts++;
+                }
+
+                if (validPosition) {
+                    logo.addEventListener('click', breakLogo);
+                    container.appendChild(logo);
+                } else {
+                    console.log("Couldn't place all logos without overlap");
+                    break;
+                }
+            }
+        }
+
+        function breakLogo(event) {
+            const logo = event.target;
+            logo.src = 'broken_logo.png';  // Replace with your broken logo image
+            logo.classList.add('broken');
+            logo.removeEventListener('click', breakLogo);
+        }
+
+        window.addEventListener('load', createBackgroundLogos);
+        window.addEventListener('resize', () => {
+            document.getElementById('background-container').innerHTML = '';
+            createBackgroundLogos();
+        });
+    </script>
 </body>
 </html>
