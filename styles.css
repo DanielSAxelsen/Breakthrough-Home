@@ -1,0 +1,171 @@
+:root {
+    --white: #ffffff;
+    --black: #000000;
+    --gray: #f0f0f0;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: var(--white);
+    color: var(--black);
+    line-height: 1.6;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 20px 0;
+}
+
+.header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin-bottom: 2rem;
+}
+
+.logo {
+    max-width: 100%;
+    height: auto;
+    max-height: 150px;
+}
+
+h1, h2, h3 {
+    text-align: center;
+    font-weight: 800;
+}
+
+h2 {
+    font-size: 1.8rem;
+    margin-top: 2rem;
+}
+
+.section {
+    margin: 40px 0;
+    text-align: center;
+}
+
+.mission-statement {
+    font-weight: bold;
+    font-style: italic;
+    font-size: 1.1rem;
+    line-height: 1.6;
+    max-width: 800px;
+    margin: 0 auto 20px;
+    padding: 15px;
+    border-left: 4px solid var(--black);
+    background-color: var(--gray);
+}
+
+.mission-description {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: justify;
+    font-size: 1rem;
+}
+
+.signup-button {
+    text-align: center;
+    margin: 30px 0;
+}
+
+.signup-button a {
+    display: inline-block;
+    padding: 12px 24px;
+    background-color: var(--black);
+    color: var(--white);
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    font-size: 1rem;
+}
+
+.signup-button a:hover {
+    background-color: var(--white);
+    color: var(--black);
+    box-shadow: 0 0 0 2px var(--black);
+}
+
+.sponsor-image {
+    max-width: 100%;
+    height: auto;
+    margin: 20px 0;
+}
+
+.event-year {
+    width: 100%;
+    margin: 20px 0;
+    padding: 15px;
+    background-color: var(--gray);
+    text-align: left;
+    transition: background-color 0.3s ease;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+}
+
+.event-year:hover {
+    background-color: var(--black);
+    color: var(--white);
+}
+
+.event-year video, .event-year img {
+    width: 100%;
+    max-width: 300px;
+    height: auto;
+    margin-right: 20px;
+    margin-bottom: 20px;
+    object-fit: cover;
+}
+
+.event-year-content {
+    flex-grow: 1;
+    min-width: 200px;
+}
+
+.contact-section {
+    margin-top: 40px;
+    text-align: center;
+}
+
+.contact-section p {
+    margin-bottom: 10px;
+}
+
+@media (max-width: 768px) {
+    .container {
+        width: 95%;
+    }
+    
+    h2 {
+        font-size: 1.5rem;
+    }
+    
+    .mission-statement {
+        font-size: 1rem;
+        padding: 10px;
+    }
+    
+    .event-year {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        padding: 10px;
+    }
+    
+    .event-year video, .event-year img {
+        margin-right: 0;
+        max-width: 100%;
+    }
+    
+    .signup-button a {
+        padding: 10px 20px;
+        font-size: 0.9rem;
+    }
+}
